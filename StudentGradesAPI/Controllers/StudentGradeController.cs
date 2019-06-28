@@ -24,25 +24,60 @@ namespace StudentGradesAPI.Controllers
             return lstStudentGradeDetails;
         }
 
-        // GET: api/StudentGrade/5
-        public string Get(int id)
+        [Route("api/StudentGrade/GetByMark")]
+        public IEnumerable<StudentGradeDetail> GetByMark(int mark)
         {
-            return "value";
+            var lstStudentGradeDetails = _repository.GetAll()
+                .Where(x => x.LanguageArts > mark
+                        && x.Maths > mark
+                        && x.Science > mark
+                        && x.SocialStudies > mark);
+
+            return lstStudentGradeDetails;
         }
 
-        // POST: api/StudentGrade
-        public void Post([FromBody]string value)
+        [Route("api/StudentGrade/GetByStudentName")]
+        public IEnumerable<StudentGradeDetail> GetByStudentName(string studentName)
         {
+            var lstStudentGradeDetails = _repository.GetAll().Where(x => x.Student.Contains(studentName));
+            return lstStudentGradeDetails;
         }
 
-        // PUT: api/StudentGrade/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/StudentGrade/GetByFilters")]
+        public IEnumerable<StudentGradeDetail> GetByFilters(int? mark, string StudentName)
         {
-        }
+            Func<StudentGradeDetail, bool> filter = null;
+            IEnumerable<StudentGradeDetail> lstStudentGradeDetails = new List<StudentGradeDetail>();
 
-        // DELETE: api/StudentGrade/5
-        public void Delete(int id)
-        {
+            if (mark != null)
+            {
+                if (!string.IsNullOrWhiteSpace(StudentName))
+                {
+                    filter = (x => x.Student.ToUpper().Contains(StudentName.ToUpper())
+                        && x.LanguageArts > mark
+                        && x.Maths > mark
+                        && x.Science > mark
+                        && x.SocialStudies > mark);
+                }
+                else
+                {
+                    filter = (x => x.LanguageArts > mark
+                        && x.Maths > mark
+                        && x.Science > mark
+                        && x.SocialStudies > mark);
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(StudentName))
+            {
+                filter = (x => x.Student.ToUpper().Contains(StudentName.ToUpper()));
+            }
+            else
+            {
+                return lstStudentGradeDetails;
+            }
+
+            lstStudentGradeDetails = _repository.GetAll().Where(filter);
+            return lstStudentGradeDetails;
         }
     }
 }

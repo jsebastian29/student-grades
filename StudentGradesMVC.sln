@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentGradesMVC", "StudentGradesMVC\StudentGradesMVC.csproj", "{C1966615-4FC9-4EAE-85E2-27F9F2EDD22D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{009FDA03-1DDC-441F-983B-0077557C1EE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentGradesAPI", "StudentGradesAPI\StudentGradesAPI.csproj", "{2684DB37-98C5-492B-BD8E-29949479ACEB}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1966615-4FC9-4EAE-85E2-27F9F2EDD22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1966615-4FC9-4EAE-85E2-27F9F2EDD22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1966615-4FC9-4EAE-85E2-27F9F2EDD22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1966615-4FC9-4EAE-85E2-27F9F2EDD22D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{009FDA03-1DDC-441F-983B-0077557C1EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{009FDA03-1DDC-441F-983B-0077557C1EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{009FDA03-1DDC-441F-983B-0077557C1EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
