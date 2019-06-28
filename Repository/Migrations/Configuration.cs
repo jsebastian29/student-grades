@@ -78,6 +78,18 @@ namespace Repository.Migrations
             };
 
             lstStudentGrades.ForEach(x => context.StudentGrades.Add(x));
+
+            var lstStudentGradeDetails = new List<StudentGradeDetail>
+            {
+                new StudentGradeDetail{ Id = 1, Student = "Anna Taylor", LanguageArts = 90, Science = 85, SocialStudies = 86, Maths = 89},
+                new StudentGradeDetail{ Id = 2, Student = "Mark Smith", LanguageArts = 82, Science = 75, SocialStudies = 89, Maths = 86},
+                new StudentGradeDetail{ Id = 3, Student = "John Doe", LanguageArts = 89, Science = 76, SocialStudies = 94, Maths = 82},
+                new StudentGradeDetail{ Id = 4, Student = "Jack Jones", LanguageArts = 93, Science = 73, SocialStudies = 97, Maths = 90},
+                new StudentGradeDetail{ Id = 5, Student = "Melody Queens", LanguageArts = 87, Science = 89, SocialStudies = 80, Maths = 83},
+                new StudentGradeDetail{ Id = 6, Student = "Noah Menac", LanguageArts = 86, Science = 90, SocialStudies = 83, Maths = 85},
+            };
+
+            lstStudentGradeDetails.ForEach(x => context.StudentGradeDetails.Add(x));
             context.SaveChanges();
             base.Seed(context);
         }

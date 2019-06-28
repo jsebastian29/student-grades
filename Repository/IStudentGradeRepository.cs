@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public interface IRepository<T> where T: class
+    public interface IStudentGradeRepository<T> where T: class
     {
         IEnumerable<T> GetAll();
-        T GetById(object Id);
-        void Insert(T obj);
-        void Update(T obj);
-        void Delete(Object Id);
-        void Save();
+        T GetById(object Id);        
     }
 }

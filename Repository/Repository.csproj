@@ -50,14 +50,20 @@
   <ItemGroup>
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentGrade.cs" />
+    <Compile Include="Entities\StudentGradeDetail.cs" />
     <Compile Include="Entities\Subject.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IStudentGradeRepository.cs" />
     <Compile Include="Migrations\201906272108370_Initial.cs" />
     <Compile Include="Migrations\201906272108370_Initial.Designer.cs">
       <DependentUpon>201906272108370_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906281325471_Add_Entity_StudentGradeDetail.cs" />
+    <Compile Include="Migrations\201906281325471_Add_Entity_StudentGradeDetail.Designer.cs">
+      <DependentUpon>201906281325471_Add_Entity_StudentGradeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentGradeRepository.cs" />
     <Compile Include="StudentGradesContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906272108370_Initial.resx">
       <DependentUpon>201906272108370_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281325471_Add_Entity_StudentGradeDetail.resx">
+      <DependentUpon>201906281325471_Add_Entity_StudentGradeDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
